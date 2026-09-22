@@ -30,7 +30,8 @@ Evaluar un modelo de mediación secuencial de procesos relacionados con la recup
 
 ## Método
 
-El estudio incluyó **24 participantes** en tratamiento residencial.
+El estudio comprende **425 observaciones persona-semana correspondientes a 39 participantes** en tratamiento
+residencial. La unidad de análisis es la **observación persona-semana**, no el participante.
 
 Se utilizaron medidas de:
 
