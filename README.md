@@ -1,4 +1,4 @@
-# modulacion-comunitaria-flexibilidad
+# Modulación comunitaria y flexibilidad psicológica
 
 <p align="center">
   <img src="assets/portada-repositorio.jpg" alt="Modulación comunitaria y flexibilidad psicológica" width="100%">
