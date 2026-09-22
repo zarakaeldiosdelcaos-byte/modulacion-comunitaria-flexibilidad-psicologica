@@ -18,7 +18,7 @@ El cartel debe:
 
 * presentar únicamente resultados documentados;
 * distinguir análisis principal, análisis complementarios y reproducción;
-* utilizar la muestra oficial de **24 pacientes y 124 observaciones**;
+* utilizar la base analítica de **425 observaciones persona-semana correspondientes a 39 participantes**;
 * mantener trazabilidad entre cada cifra y su fuente;
 * distinguir resultados estadísticos de interpretaciones;
 * hacer explícitas las principales limitaciones metodológicas.
@@ -186,8 +186,8 @@ No utilizar afirmaciones generales del tipo “la investigación rara vez…” 
 | Elemento                 | Información                                                       |
 | ------------------------ | ----------------------------------------------------------------- |
 | Diseño                   | Medidas repetidas en comunidad terapéutica residencial            |
-| Muestra                  | **24 pacientes**                                                  |
-| Observaciones            | **124 observaciones longitudinales**                              |
+| Base analítica           | **425 observaciones persona-semana / 39 participantes**           |
+| Unidad de análisis       | Observación persona-semana                                        |
 | Identificador            | `ID`                                                              |
 | Variables principales    | `indefension_idx_z`, `BADS_evitacion`, `EROS_total`, `ATQ8_total` |
 | Variables comunitarias   | Capital comunitario y balance comunitario                         |
@@ -342,8 +342,8 @@ Las conclusiones deben mantenerse en términos asociativos y estadísticos y no 
 
 El cartel debe conservar las principales limitaciones documentadas en `03_LIMITACIONES.md`:
 
-1. **Muestra:** 24 pacientes y 124 observaciones; las observaciones repetidas no equivalen a 124 participantes independientes.
-2. **Tamaño muestral individual:** el número de pacientes limita la precisión de modelos con múltiples parámetros.
+1. **Base analítica:** 425 observaciones persona-semana de 39 participantes; las observaciones repetidas no equivalen a 425 participantes independientes.
+2. **Tamaño muestral individual:** el número de participantes limita la precisión de modelos con múltiples parámetros.
 3. **Índices derivados:** capital comunitario y flexibilidad son construcciones específicas del análisis.
 4. **Reconstrucción:** algunos procedimientos posteriores de reproducción no son idénticos a la implementación histórica.
 5. **Generalización e inferencia:** el diseño observacional y el contexto residencial específico limitan la inferencia causal y la generalización.
@@ -396,7 +396,7 @@ Cada figura debe permitir identificar, mediante el código o el pie correspondie
 
 * [ ] Confirmar dimensiones y orientación exigidas por el evento.
 * [ ] Confirmar autores, orden y filiaciones.
-* [ ] Utilizar **24 pacientes / 124 observaciones** en todo el cartel.
+* [ ] Utilizar **425 observaciones / 39 participantes** en todo el cartel.
 * [ ] Verificar que ninguna figura conserve cifras correspondientes a otra versión de la base.
 * [ ] Incorporar `fig1`, `fig2` y `fig3` como núcleo de resultados.
 * [ ] Considerar `fig4` para documentar sensibilidad del indicador comunitario.
@@ -412,8 +412,8 @@ Cada figura debe permitir identificar, mediante el código o el pie correspondie
 
 No incluir:
 
-* `425 observaciones` o `39 participantes`;
-* una afirmación de que `N = 24` pertenece a otro estudio;
+* `N = 24` como muestra de este análisis: corresponde al estudio piloto de rumiación, otra línea de trabajo;
+* una afirmación de que `425 observaciones` o `39 participantes` pertenecen a otro estudio;
 * afirmaciones de causalidad derivadas de la mediación;
 * “moderación por flexibilidad” como conclusión;
 * una afirmación de que el capital comunitario tiene un efecto único independiente de su definición;
