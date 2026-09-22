@@ -1,8 +1,11 @@
 # Método
 
+> **Investigación en proceso.** Este documento describe la metodología de un estudio en curso. Los
+> resultados que acompañan a esta documentación son preliminares.
+
 ## 1. Diseño
 
-Estudio con **medidas repetidas** realizado en una comunidad terapéutica residencial, con observaciones longitudinales por paciente.
+Estudio con **medidas repetidas** realizado en una comunidad terapéutica residencial, con observaciones longitudinales por participante.
 
 La unidad de identificación del participante fue `ID`. La estructura repetida de las observaciones se consideró en los análisis que incorporaron agrupamiento por participante.
 
@@ -12,14 +15,14 @@ El análisis examinó la relación entre **indefensión, evitación, reforzamien
 
 ## 2. Muestra y unidad de análisis
 
-La muestra analítica comprendió:
+La base analítica del estudio comprende:
 
-* **24 pacientes**
-* **124 observaciones**
+* **425 observaciones persona-semana**
+* **39 participantes**
 
 El identificador de participante fue `ID`.
 
-Las 124 observaciones corresponden a mediciones repetidas de los 24 pacientes y, por tanto, no representan 124 participantes independientes.
+La unidad de análisis es la **observación persona-semana**: las 425 observaciones corresponden a mediciones repetidas de los 39 participantes y, por tanto, no representan 425 participantes independientes. Los modelos longitudinales y los modelos aditivos generalizados retienen, según su especificación, entre 400 y 425 observaciones de esa base.
 
 ---
 
@@ -109,13 +112,23 @@ dico_balance
 
 El capital comunitario se representó mediante un índice compuesto construido a partir de un **análisis de componentes principales (PCA)** sobre 13 indicadores normalizados.
 
+Los trece indicadores fueron:
+
+```text
+apoyo_social_norm      ct_norm            valencia_norm
+esperanza_norm         progreso_norm      eros_norm
+evitacion_inv_norm     gad7_inv_norm      ect_norm
+iaa_norm               sueño_norm         adherencia_norm
+estres_inv_norm
+```
+
 El procedimiento recuperado incluyó:
 
-1. preparación de los indicadores normalizados;
+1. preparación de los indicadores normalizados, con imputación por mediana;
 2. análisis de componentes principales;
 3. combinación de componentes de acuerdo con la varianza explicada;
 4. transformación mediante `robust_plogis`;
-5. suavizado exponencial recursivo por paciente.
+5. suavizado exponencial recursivo por participante.
 
 El suavizado utilizó:
 
@@ -147,7 +160,7 @@ F_{flex}
 0.20F_{evitar}
 $$
 
-Posteriormente se aplicó `robust_plogis` y suavizado exponencial recursivo por paciente, con:
+Posteriormente se aplicó `robust_plogis` y suavizado exponencial recursivo por participante, con:
 
 ```text
 α = 0.3
@@ -201,15 +214,13 @@ modelo_mediacion <- '
   EROS_total ~ a2 * BADS_evitacion +
                a3 * indefension_idx_z +
                semana_norm +
-               dico_capital_compuesto +
-               dico_balance
+               dico_capital_compuesto + dico_balance
 
   ATQ8_total ~ b1 * EROS_total +
                b2 * BADS_evitacion +
                c_prime * indefension_idx_z +
                semana_norm +
-               dico_capital_compuesto +
-               dico_balance
+               dico_capital_compuesto + dico_balance
 
   indirect1 := a1 * a2 * b1
   indirect2 := a1 * b2
@@ -323,9 +334,9 @@ Los resultados de estos términos se presentan en `02_RESULTADOS.md`.
 
 ## 5. Datos faltantes y transformaciones
 
-En los procedimientos de reconstrucción no se realizó imputación de datos.
+Las estimaciones utilizaron casos completos para cada especificación. No se realizó imputación de datos en los modelos de reconstrucción.
 
-Las estimaciones de los modelos de reconstrucción utilizaron casos completos para cada especificación.
+El índice de capital comunitario sí incorpora una imputación por mediana de sus trece indicadores, previa al análisis de componentes principales, como parte del procedimiento de construcción del índice.
 
 Las variables utilizadas en forma estandarizada fueron identificadas explícitamente, como:
 
@@ -378,7 +389,7 @@ La reproducción se mantiene separada del análisis histórico.
 
 Cuando fue necesario reconstruir la mediación sin disponer de la implementación analítica original, el efecto indirecto se calculó como producto de coeficientes y se estimó mediante **bootstrap percentil de 500 réplicas**.
 
-Esta implementación corresponde al procedimiento de reconstrucción y no se presenta como una afirmación de que el análisis original utilizó exactamente este método.
+Esta implementación corresponde al procedimiento de reconstrucción y se documenta como tal.
 
 ---
 
@@ -432,11 +443,11 @@ Esta verificación se considera distinta de una nueva ejecución computacional.
 
 ### Análisis principal
 
-Corresponde al análisis realizado sobre la muestra de:
+Corresponde al análisis realizado sobre la base de:
 
 ```text
-24 pacientes
-124 observaciones
+425 observaciones persona-semana
+39 participantes
 ```
 
 incluyendo la especificación de mediación, las variables y covariables documentadas, los modelos de moderación y los análisis complementarios.
