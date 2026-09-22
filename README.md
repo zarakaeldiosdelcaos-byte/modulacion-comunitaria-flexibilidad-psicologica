@@ -17,12 +17,13 @@ La recuperación de los trastornos por consumo de sustancias ocurre en interacci
 Este proyecto examina un modelo de **mediación secuencial** en población residencial.
 
 <p align="center">
-  <img src="assets/reconstruidas/mediacion-secuencial.jpg"
+  <img src="figuras/reconstruidas/modulacion-secuencial.jpg"
        alt="Modelo conceptual de mediación secuencial: indefensión, evitación, déficit de reforzadores y malestar"
        width="850">
 </p>
 
 El modelo explora el papel modulador del **capital comunitario** y la **flexibilidad psicológica**.
+
 ## Objetivo
 
 Evaluar un modelo de mediación secuencial de procesos relacionados con la recuperación en una comunidad terapéutica residencial, así como explorar si el contexto comunitario y la flexibilidad psicológica modifican las relaciones entre evitación, reforzadores ambientales y malestar.
