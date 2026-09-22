@@ -88,6 +88,8 @@ El proyecto no pretende reducir la recuperación a un único mecanismo psicológ
 
 **Estado:** estudio en proceso.
 
+El detalle del avance —qué compone el estudio, en qué etapa se encuentra y hacia dónde avanza— está en **[`ESTADO.md`](ESTADO.md)**.
+
 El repositorio se encuentra en construcción y está organizado como un espacio de documentación científica reproducible y progresiva. Su propósito es reunir los materiales que permiten comprender **cómo se plantea, documenta y comunica el estudio**, manteniendo separadas las fuentes clínicas individuales de los materiales destinados a consulta pública.
 
 ### Contenido del repositorio
