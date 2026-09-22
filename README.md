@@ -12,12 +12,17 @@
 
 La recuperación de los trastornos por consumo de sustancias ocurre en interacción con procesos psicológicos individuales y con las condiciones sociales y comunitarias en las que se desarrolla el tratamiento. En este contexto, la **rumiación** y los **pensamientos automáticos negativos** pueden constituir procesos relevantes de malestar y evitación, mientras que la flexibilidad psicológica y las características del entorno comunitario podrían modificar la forma en que estos procesos se relacionan con la recuperación.
 
-Este proyecto examina un modelo de **mediación secuencial** en población residencial, considerando la cadena:
+## Modelo de mediación
 
-**indefensión → evitación → déficit de reforzadores → malestar**
+Este proyecto examina un modelo de **mediación secuencial** en población residencial.
 
-y explora el papel modulador del **capital comunitario** y la **flexibilidad psicológica**.
+<p align="center">
+  <img src="figuras/reconstruidas/mediacion-secuencial.png"
+       alt="Modelo conceptual de mediación secuencial: indefensión, evitación, déficit de reforzadores y malestar"
+       width="850">
+</p>
 
+El modelo explora el papel modulador del **capital comunitario** y la **flexibilidad psicológica**.
 ## Objetivo
 
 Evaluar un modelo de mediación secuencial de procesos relacionados con la recuperación en una comunidad terapéutica residencial, así como explorar si el contexto comunitario y la flexibilidad psicológica modifican las relaciones entre evitación, reforzadores ambientales y malestar.
