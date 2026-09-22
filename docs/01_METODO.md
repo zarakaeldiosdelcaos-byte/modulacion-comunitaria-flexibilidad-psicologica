@@ -2,26 +2,24 @@
 
 ## 1. Diseño
 
-Estudio con **medidas repetidas** realizado en una comunidad terapéutica residencial, con observaciones semanales por residente.
+Estudio con **medidas repetidas** realizado en una comunidad terapéutica residencial, con observaciones longitudinales por paciente.
 
-La unidad longitudinal de observación fue la combinación **residente-semana**. Debido a esta estructura repetida, `ID` se utilizó como identificador de participante y variable de agrupamiento en los análisis que incorporaron dependencia intraindividuo.
+La unidad de identificación del participante fue `ID`. La estructura repetida de las observaciones se consideró en los análisis que incorporaron agrupamiento por participante.
 
-El análisis se orientó a examinar la relación temporal y estadística entre **indefensión, evitación, reforzamiento ambiental y malestar cognitivo**, incorporando además indicadores de contexto comunitario y flexibilidad psicológica.
+El análisis examinó la relación entre **indefensión, evitación, reforzamiento ambiental y malestar cognitivo**, incorporando indicadores de contexto comunitario y flexibilidad psicológica.
 
 ---
 
 ## 2. Muestra y unidad de análisis
 
-La base analítica principal comprendió:
+La muestra analítica comprendió:
 
-* **39 residentes**
-* **425 observaciones persona-semana**
+* **24 pacientes**
+* **124 observaciones**
 
-La unidad de agrupamiento fue `ID`, correspondiente a cada residente.
+El identificador de participante fue `ID`.
 
-El número histórico de **24 participantes** corresponde a un estudio piloto independiente de rumiación y **no constituye la muestra del análisis principal**. Esa base se utilizó únicamente en procedimientos posteriores de verificación y reproducción documental.
-
-Las bases externas utilizadas para controles de sensibilidad o reconstrucción se consideran independientes de la muestra principal y no se utilizan para redefinir su tamaño muestral.
+Las 124 observaciones corresponden a mediciones repetidas de los 24 pacientes y, por tanto, no representan 124 participantes independientes.
 
 ---
 
@@ -29,19 +27,29 @@ Las bases externas utilizadas para controles de sensibilidad o reconstrucción s
 
 ### 3.1 Indefensión
 
-La variable predictora principal del modelo de mediación fue `indefension_idx_z`.
+La variable predictora principal del modelo de mediación fue:
 
-La variable se incorporó en forma estandarizada (`z`) en la especificación recuperada del modelo principal.
+```text
+indefension_idx_z
+```
 
-El procedimiento exacto mediante el cual se construyó originalmente `indefension_idx_z` no quedó completamente localizado en los materiales disponibles y, por tanto, no se reconstruye aquí una fórmula que no esté documentada en la fuente primaria.
+La variable se incorporó en la especificación del modelo en escala estandarizada.
+
+El procedimiento exacto mediante el cual fue construido originalmente `indefension_idx_z` no quedó completamente localizado en los materiales disponibles. Por ello, no se reproduce aquí una fórmula que no esté documentada directamente en la fuente primaria.
 
 ---
 
 ### 3.2 Evitación y activación: BADS
 
-La conducta de evitación se representó mediante `BADS_evitacion`, derivada del instrumento **Behavioral Activation for Depression Scale (BADS)**.
+La conducta de evitación se representó mediante:
 
-En el modelo secuencial, esta variable constituye el **primer mediador**:
+```text
+BADS_evitacion
+```
+
+derivada del **Behavioral Activation for Depression Scale (BADS)**.
+
+En el modelo secuencial, esta variable constituyó el primer mediador:
 
 $$
 \text{Indefensión} \rightarrow \text{Evitación}
@@ -51,9 +59,15 @@ $$
 
 ### 3.3 Reforzamiento ambiental: EROS
 
-El reforzamiento ambiental se representó mediante `EROS_total`, derivado de la escala **Environmental Reward Observation Scale (EROS)**.
+El reforzamiento ambiental se representó mediante:
 
-En el modelo secuencial, constituye el **segundo mediador**:
+```text
+EROS_total
+```
+
+derivado de la **Environmental Reward Observation Scale (EROS)**.
+
+En el modelo secuencial, esta variable constituyó el segundo mediador:
 
 $$
 \text{Evitación} \rightarrow \text{Reforzamiento ambiental}
@@ -63,53 +77,101 @@ $$
 
 ### 3.4 Malestar cognitivo: ATQ-8
 
-El desenlace principal del modelo de mediación fue `ATQ8_total`, derivado del **Automatic Thoughts Questionnaire, versión de 8 ítems (ATQ-8)**.
+El desenlace principal del modelo de mediación fue:
 
-En la especificación principal, `ATQ8_total` representa el componente de **malestar cognitivo / pensamientos automáticos negativos**.
+```text
+ATQ8_total
+```
+
+derivado del **Automatic Thoughts Questionnaire, versión de 8 ítems (ATQ-8)**.
+
+En la especificación principal, `ATQ8_total` representó el componente de malestar cognitivo/pensamientos automáticos negativos utilizado en el análisis.
 
 ---
 
 ### 3.5 Variables comunitarias y longitudinales
 
-Se incorporaron variables relacionadas con el contexto comunitario y la progresión temporal:
+Se incorporaron como covariables:
 
-* `semana_norm`: semana normalizada.
-* `dico_capital_compuesto`: indicador compuesto de capital comunitario.
-* `dico_balance`: indicador de balance comunitario utilizado como covariable.
+```text
+semana_norm
+dico_capital_compuesto
+dico_balance
+```
 
-Estas variables se incorporaron como covariables en las ecuaciones del modelo principal.
+`semana_norm` representó la dimensión temporal incluida en el modelo.
+
+`dico_capital_compuesto` y `dico_balance` correspondieron a los indicadores comunitarios utilizados en las especificaciones recuperadas del análisis.
 
 ---
 
 ### 3.6 Índice de capital comunitario
 
-El capital comunitario se representó mediante un índice compuesto construido a partir de un **análisis de componentes principales (PCA)** aplicado a **13 indicadores normalizados**.
+El capital comunitario se representó mediante un índice compuesto construido a partir de un **análisis de componentes principales (PCA)** sobre 13 indicadores normalizados.
 
-Posteriormente, el índice fue sometido a un procedimiento de **suavizado exponencial por residente**, con el propósito de generar una representación longitudinal del constructo.
+El procedimiento recuperado incluyó:
 
-La definición operativa de este índice debe distinguirse de otros indicadores de capital utilizados en análisis complementarios; no se consideran automáticamente equivalentes.
+1. preparación de los indicadores normalizados;
+2. análisis de componentes principales;
+3. combinación de componentes de acuerdo con la varianza explicada;
+4. transformación mediante `robust_plogis`;
+5. suavizado exponencial recursivo por paciente.
+
+El suavizado utilizó:
+
+```text
+α = 0.3
+```
+
+La varianza explicada específica utilizada en la ejecución del PCA no quedó conservada como salida persistente.
 
 ---
 
 ### 3.7 Índice de flexibilidad psicológica
 
-La flexibilidad psicológica se representó mediante un índice compuesto ponderado basado en componentes de:
+La flexibilidad psicológica se representó mediante un índice compuesto basado en tres componentes:
 
-* proceso,
-* activación,
+* proceso;
+* activación;
 * evitación.
 
-El índice fue sometido al mismo procedimiento de suavizado longitudinal por residente utilizado para el indicador comunitario.
+La implementación recuperada utilizó pesos fijos:
 
-Los pesos exactos y la fórmula completa de combinación no se reproducen en este documento mientras no estén respaldados de manera inequívoca por la fuente primaria de construcción.
+$$
+F_{flex}
+=
+0.45F_{proceso}
++
+0.35F_{activacion}
+-
+0.20F_{evitar}
+$$
+
+Posteriormente se aplicó `robust_plogis` y suavizado exponencial recursivo por paciente, con:
+
+```text
+α = 0.3
+```
+
+La implementación recuperada de este índice **no utiliza PCA**.
 
 ---
 
 ### 3.8 Rumiación
 
-La rumiación se incluyó en análisis complementarios y modelos adicionales, pero **no forma parte de la cadena principal de mediación secuencial** descrita en este documento.
+La rumiación se utilizó en análisis complementarios y modelos adicionales.
 
-Cuando se utilizó la variable correspondiente, se distinguió explícitamente de los componentes BADS de evitación y de los índices comunitarios.
+No forma parte de la cadena principal del modelo de mediación secuencial:
+
+$$
+\text{Indefensión}
+\rightarrow
+\text{Evitación}
+\rightarrow
+\text{EROS}
+\rightarrow
+\text{ATQ-8}
+$$
 
 ---
 
@@ -117,7 +179,7 @@ Cuando se utilizó la variable correspondiente, se distinguió explícitamente d
 
 ### 4.1 Modelo de mediación secuencial
 
-Se especificó un modelo de **ecuaciones estructurales** para evaluar la siguiente cadena:
+Se especificó un modelo de **ecuaciones estructurales** para evaluar la cadena:
 
 $$
 \text{Indefensión}
@@ -177,69 +239,59 @@ $$
 total=c'+indirect1+indirect2+indirect3
 $$
 
-Los coeficientes, intervalos de confianza y valores de `p` correspondientes se reportan exclusivamente en `02_RESULTADOS.md`.
+Los coeficientes, intervalos de confianza y valores de `p` se presentan en `02_RESULTADOS.md`.
 
 ---
 
 ### 4.2 Estimación del modelo principal
 
-La especificación estadística documentada para el modelo original utilizó:
+La especificación estadística documentada utilizó:
 
 * **R**
-* **`lavaan`** para el modelo de ecuaciones estructurales
+* **`lavaan`**
 * estimador **MLR**
 * agrupamiento por participante mediante `ID`
-* tratamiento de datos faltantes mediante **casos completos por modelo** en la especificación recuperada
+* casos completos por modelo en la especificación recuperada
 * **500 réplicas bootstrap**
-* semilla documentada en la ejecución original: `2025`
-
-En la reconstrucción posterior se mantuvo separada esta especificación histórica de las decisiones adoptadas específicamente para reproducirla.
+* `set.seed(2025)` en la ejecución original
 
 ---
 
 ### 4.3 Moderación por capital comunitario
 
-Se evaluaron modelos en los que indicadores de capital comunitario se incorporaron como posibles moderadores de las relaciones entre los componentes de la cadena de mediación.
+Se estimaron modelos que incorporaron el capital comunitario como moderador.
 
-El análisis incluyó términos de interacción y se examinó la relación entre:
+Se evaluaron términos de interacción entre el componente de evitación y el indicador de capital comunitario dentro de la estructura del modelo.
 
-* evitación,
-* capital comunitario,
-* reforzamiento ambiental.
-
-La especificación exacta de cada término de interacción se conserva en los scripts de análisis correspondientes.
-
-Los coeficientes de interacción, intervalos de confianza y valores de `p` se reportan en `02_RESULTADOS.md`.
+Los coeficientes, intervalos de confianza y valores de `p` se presentan en `02_RESULTADOS.md`.
 
 ---
 
 ### 4.4 Moderación por flexibilidad psicológica
 
-Se evaluó la participación de la flexibilidad psicológica como variable moderadora dentro de la estructura de mediación.
+Se estimaron modelos que incorporaron la flexibilidad psicológica como variable moderadora.
 
-Los modelos examinaron tanto sus efectos principales como los términos de interacción correspondientes a las relaciones especificadas en el análisis.
+Los modelos incluyeron los efectos correspondientes de flexibilidad y los términos de interacción especificados en el análisis recuperado.
 
-La interpretación de los efectos condicionales se reserva para `02_RESULTADOS.md`; este documento únicamente describe su procedimiento de estimación.
+Los resultados numéricos se presentan en `02_RESULTADOS.md`.
 
 ---
 
 ### 4.5 Modelo combinado
 
-Se estimó adicionalmente un modelo que incorporó simultáneamente los indicadores de:
+Se estimó un modelo combinado que incorporó simultáneamente:
 
-* capital comunitario,
-* flexibilidad psicológica,
+* capital comunitario;
+* flexibilidad psicológica;
 * términos de interacción correspondientes.
 
-Este análisis tuvo como finalidad evaluar ambos procesos dentro de una misma especificación estadística.
-
-No se presentan aquí los coeficientes ni los valores de significancia.
+Los coeficientes y valores de significancia se presentan en `02_RESULTADOS.md`.
 
 ---
 
-### 4.6 Modelos mixtos para el desenlace semanal
+### 4.6 Modelos mixtos
 
-Para analizar el comportamiento longitudinal del desenlace semanal se utilizaron **modelos mixtos**, considerando la estructura repetida de las observaciones por residente.
+También se utilizaron **modelos mixtos** para análisis longitudinales del desenlace.
 
 La implementación documentada utilizó:
 
@@ -247,15 +299,15 @@ La implementación documentada utilizó:
 R / lme4
 ```
 
-La inclusión de `ID` permitió representar la dependencia derivada de las observaciones repetidas dentro de cada participante.
+La estructura repetida por participante se representó mediante `ID`.
 
-Las fórmulas específicas de los modelos mixtos se conservan en los scripts reproducibles y no se reconstruyen aquí cuando la especificación completa no está documentada en el material metodológico.
+Las fórmulas específicas de cada modelo mixto se conservan en las salidas y scripts correspondientes.
 
 ---
 
 ### 4.7 Modelos aditivos generalizados
 
-Se evaluaron posibles relaciones no lineales mediante **modelos aditivos generalizados (GAM)**.
+Se evaluaron relaciones no lineales mediante **modelos aditivos generalizados (GAM)**.
 
 La implementación documentada utilizó:
 
@@ -263,23 +315,25 @@ La implementación documentada utilizó:
 R / mgcv
 ```
 
-Los modelos GAM se utilizaron para examinar términos suaves asociados con los indicadores comunitarios y de flexibilidad.
+Se evaluaron términos suaves asociados con los indicadores comunitarios y de flexibilidad.
 
-Los resultados de los términos suaves se reportan en `02_RESULTADOS.md`.
+Los resultados de estos términos se presentan en `02_RESULTADOS.md`.
 
 ---
 
-## 5. Datos faltantes y estandarización
+## 5. Datos faltantes y transformaciones
 
-No se realizó imputación de datos en los procedimientos de reconstrucción.
+En los procedimientos de reconstrucción no se realizó imputación de datos.
 
-Las estimaciones se calcularon utilizando **casos completos para cada modelo**, y el tamaño analítico correspondiente se reportó por separado para cada especificación cuando fue necesario.
+Las estimaciones de los modelos de reconstrucción utilizaron casos completos para cada especificación.
 
-No se aplicó estandarización de variables de manera oculta durante la reconstrucción.
+Las variables utilizadas en forma estandarizada fueron identificadas explícitamente, como:
 
-Cuando una variable fue utilizada en escala estandarizada, dicha transformación se identificó explícitamente en la variable correspondiente, como en `indefension_idx_z`.
+```text
+indefension_idx_z
+```
 
-Los modelos de reconstrucción conservaron y reportaron por separado las escalas originales (`b`) y estandarizadas (`β`) cuando ambas fueron calculadas.
+No se asumieron transformaciones adicionales que no estuvieran documentadas en las fuentes analizadas.
 
 ---
 
@@ -293,7 +347,7 @@ Ningún archivo original fue modificado. Los scripts de reproducción operan sob
 ../03_BASES_DE_DATOS/
 ```
 
-La estructura de reproducción fue:
+La estructura de reproducción es:
 
 ```text
 07_REPRODUCCION_ESTADISTICA/
@@ -316,76 +370,19 @@ La estructura de reproducción fue:
 └── README_REPRODUCCION.md
 ```
 
-La reproducción debe interpretarse como **verificación de trazabilidad y sensibilidad**, no como sustitución del análisis original.
-
----
-
-### 6.1 Corrida 1: moderación y rumiación
-
-Se utilizó la base:
-
-```text
-Rumia_preliminar.xlsx
-```
-
-Esta base corresponde al estudio piloto histórico de **24 participantes**.
-
-Su función en la reproducción fue verificar los coeficientes de moderación previamente documentados y la correspondencia de la muestra histórica.
-
-Esta base no modifica el tamaño muestral del estudio principal.
-
----
-
-### 6.2 Corrida 2: BADS, EROS y ATQ
-
-Se utilizó:
-
-```text
-Registro Quincenal BADS EROS ATQ INV.xlsx
-```
-
-El objetivo fue determinar qué relaciones podían estimarse en la única base disponible que contenía conjuntamente variables BADS y EROS.
-
-Esta corrida se considera un análisis de **estimabilidad y verificación**, no una sustitución de la base analítica principal.
-
----
-
-### 6.3 Corrida 3: reconstrucción de mediación secuencial
-
-Se utilizó:
-
-```text
-narraciones_rumia.csv
-```
-
-con:
-
-* 251 observaciones
-* 21 participantes (`ID`)
-
-Esta base constituye un **control externo de sensibilidad** y no corresponde a la muestra principal de 39 residentes.
-
-Por esta razón, sus resultados no se utilizan para redefinir, confirmar o refutar el modelo principal del proyecto.
-
-Además, el desenlace utilizado en esta base no es idéntico al desenlace principal del modelo original.
+La reproducción se mantiene separada del análisis histórico.
 
 ---
 
 ## 7. Procedimiento de bootstrap en la reproducción
 
-Cuando se reconstruyó la mediación secuencial sin disponer de la implementación analítica original, el efecto indirecto se calculó como **producto de coeficientes** y se estimó mediante **bootstrap percentil de 500 réplicas**.
+Cuando fue necesario reconstruir la mediación sin disponer de la implementación analítica original, el efecto indirecto se calculó como producto de coeficientes y se estimó mediante **bootstrap percentil de 500 réplicas**.
 
-Esta decisión se adoptó exclusivamente como procedimiento de reconstrucción compatible con la documentación disponible, que indicaba “bootstrapping (500 réplicas)”, sin que se hubiera localizado la función original utilizada para generar dicho procedimiento.
-
-Por tanto:
-
-> El bootstrap implementado durante la reproducción **no debe interpretarse como evidencia de que el análisis original utilizó exactamente este procedimiento**.
-
-En particular, la reconstrucción no sustituye una implementación original de `lavaan` ni presupone el uso de intervalos sesgo-corregidos de Preacher–Hayes.
+Esta implementación corresponde al procedimiento de reconstrucción y no se presenta como una afirmación de que el análisis original utilizó exactamente este método.
 
 ---
 
-## 8. Semillas y entorno reproducible
+## 8. Entorno de reproducción
 
 Para la tercera corrida de reproducción se utilizó:
 
@@ -399,103 +396,84 @@ El script original de enero utilizaba:
 set.seed(1234)
 ```
 
-La diferencia se mantiene explícita porque el bootstrap puede depender de la semilla.
-
-Entorno utilizado para la reproducción:
+Entorno de reproducción:
 
 ```text
 R version 4.6.1 (2026-06-24 ucrt)
 R >= 4.4 requerido
-paquete readxl
+readxl
 ```
 
-Los scripts son independientes y de solo lectura respecto de las bases de entrada.
-
-Ejemplo de ejecución en Windows mediante `Rscript`:
-
-```bash
-"/c/Program Files/R/R-4.6.1/bin/Rscript.exe" \
-  "G:/Mi unidad/RECONSTRUCCION_MODULACION_COMUNITARIA_FLEXIBILIDAD/07_REPRODUCCION_ESTADISTICA/codigo/REPRODUCCION_moderacion_rumia.R"
-```
+Los scripts operan en modo de solo lectura sobre las bases de entrada.
 
 ---
 
-## 9. Verificación documental de resultados históricos
+## 9. Verificación documental
 
-Además de las corridas de reproducción, se realizó una **verificación documental de las salidas primarias**.
+Además de las corridas de reproducción, se realizó una verificación documental de salidas estadísticas históricas.
 
-Las salidas originales localizadas en:
+Las salidas localizadas en:
 
 ```text
 ...\MFCA-N1\Autoencodere\outputs_MFCA\
 ```
 
-fueron cotejadas y copiadas en:
+fueron cotejadas y conservadas en:
 
 ```text
 ../08_RESULTADOS_HISTORICOS/salidas_MFCA_mediacion_moderacion/
 ```
 
-Esta verificación documental constituye un procedimiento distinto de la reproducción computacional.
-
-Su función es establecer la trazabilidad entre los coeficientes históricamente reportados y los archivos primarios generados por el análisis original.
+Esta verificación se considera distinta de una nueva ejecución computacional.
 
 ---
 
-## 10. Trazabilidad y conservación de archivos
+## 10. Distinción entre análisis y reproducción
 
-Los procedimientos de reproducción se ejecutan exclusivamente sobre copias de las bases.
+### Análisis principal
 
-Los scripts:
-
-* no modifican los archivos originales;
-* escriben sus resultados únicamente dentro de `07_REPRODUCCION_ESTADISTICA/`;
-* conservan logs de ejecución;
-* generan archivos de salida diferenciados por corrida;
-* permiten distinguir entre resultados reproducidos y resultados procedentes de salidas históricas.
-
-La procedencia específica de cada cifra se documenta por separado en:
+Corresponde al análisis realizado sobre la muestra de:
 
 ```text
-04_PROCEDENCIA.md
+24 pacientes
+124 observaciones
 ```
 
----
-
-## 11. Distinción entre análisis original y reconstrucción
-
-Para evitar una falsa equivalencia metodológica, este repositorio distingue explícitamente:
-
-### Análisis original
-
-Corresponde al análisis estadístico documentado y/o recuperado de las fuentes primarias del proyecto, incluyendo la especificación SEM, sus variables, covariables, estructura de mediación, agrupamiento por participante y procedimiento de estimación documentado.
+incluyendo la especificación de mediación, las variables y covariables documentadas, los modelos de moderación y los análisis complementarios.
 
 ### Reproducción estadística
 
-Corresponde a los procedimientos desarrollados posteriormente para verificar, reconstruir o someter a control de sensibilidad determinados resultados cuando la base analítica original o parte de su implementación no estaba disponible.
+Corresponde a procedimientos posteriores de reconstrucción, verificación o control de sensibilidad realizados sobre copias de bases y/o bases complementarias.
 
-La reproducción **no reemplaza** el análisis original y sus resultados no deben presentarse como si provinieran de la misma muestra, base de datos o implementación estadística.
+Los resultados de estos procedimientos se identifican separadamente en `02_RESULTADOS.md`.
 
 ---
 
-## 12. Software y herramientas
+## 11. Software
 
-Los análisis se realizaron en el entorno R y utilizaron, según el procedimiento:
+Los análisis y procedimientos de reconstrucción utilizaron:
 
 ```text
+R
 lavaan
 lme4
 mgcv
 readxl
 ```
 
-La documentación de ejecución y los scripts reproducibles se conservan en:
+Los scripts de reproducción se conservan en:
 
 ```text
 07_REPRODUCCION_ESTADISTICA/
 ```
 
-Los resultados numéricos, intervalos de confianza y valores de `p` se reportan en:
+La procedencia específica de cada variable y cifra se documenta en:
+
+```text
+04_PROCEDENCIA.md
+```
+
+Los resultados numéricos se documentan en:
 
 ```text
 02_RESULTADOS.md
