@@ -246,16 +246,17 @@ $$
 \text{ATQ-8}
 $$
 
-Resultados documentados:
+### Resultados documentados
 
-* Indefensión → evitación: `10.013`, IC 95 % `[7.080, 12.947]`, `p < .001`.
-* Evitación → EROS: `0.730`, IC 95 % `[0.666, 0.794]`, `p < .001`.
-* EROS → ATQ-8: `0.374`, IC 95 % `[0.269, 0.480]`, `p < .001`.
-* Efecto indirecto secuencial: **`2.735`**, IC 95 % `[1.633, 3.837]`, `p < .001`.
-* Efecto total: **`2.303`**, IC 95 % `[1.366, 3.241]`, `p < .001`.
+| Ruta / parámetro | Estimación | IC 95 % | p |
+|---|---:|---:|---:|
+| Indefensión → evitación (`a1`) | 10.013 | [7.080, 12.947] | < .001 |
+| Evitación → EROS (`a2`) | 0.730 | [0.666, 0.794] | < .001 |
+| EROS → ATQ-8 (`b1`) | 0.374 | [0.269, 0.480] | < .001 |
+| **Efecto indirecto secuencial (`a1 × a2 × b1`)** | **2.735** | **[1.633, 3.837]** | **< .001** |
+| **Efecto total (`total`)** | **2.303** | **[1.366, 3.241]** | **< .001** |
 
-> La etiqueta “efecto indirecto total” utilizada en el resumen histórico se refiere a `indirect1 = a1 × a2 × b1`; el parámetro `total` del modelo tiene un valor distinto.
-
+> **Nota:** En el resumen histórico, `2.735` aparece denominado “efecto indirecto total”. En la especificación estadística recuperada corresponde específicamente a `indirect1 = a1 × a2 × b1`; el parámetro `total` del modelo es `2.303`.
 ---
 
 ## 7.2 Moderación por capital comunitario
@@ -439,16 +440,12 @@ Cada figura debe permitir identificar, mediante el código o el pie correspondie
 
 No incluir:
 
-* `N = 24` como muestra de este análisis: corresponde al estudio piloto de rumiación, otra línea de trabajo;
-* una afirmación de que `425 observaciones` o `39 participantes` pertenecen a otro estudio;
 * afirmaciones de causalidad derivadas de la mediación;
 * “moderación por flexibilidad” como conclusión;
 * una afirmación de que el capital comunitario tiene un efecto único independiente de su definición;
 * afirmaciones de validación psicométrica de los proxies que no estén documentadas;
-* referencias bibliográficas reconstruidas;
 * rutas absolutas del entorno de trabajo;
 * información de usuario, equipo o sistema operativo que no sea necesaria para reproducir el análisis;
-* instrucciones personales de instalación o uso de VS Code dentro del cartel.
 
 ---
 
