@@ -1,7 +1,7 @@
 # modulacion-comunitaria-flexibilidad
 
 <p align="center">
-  <img src="assets/portada.png" alt="Modulación comunitaria y flexibilidad psicológica" width="100%">
+  <img src="assets/Portada repo.png" alt="Modulación comunitaria y flexibilidad psicológica" width="100%">
 </p>
 
 # Modulación comunitaria y flexibilidad psicológica
