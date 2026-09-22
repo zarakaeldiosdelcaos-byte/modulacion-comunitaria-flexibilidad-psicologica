@@ -1,35 +1,60 @@
 cff-version: 1.2.0
-message: "Investigación en proceso. Si utiliza este material, cite la versión etiquetada y su fecha."
+
+message: >-
+  Si utiliza este material, cite la versión del repositorio utilizada.
+  Se recomienda citar una versión etiquetada del proyecto.
+
 title: "Modulación comunitaria y flexibilidad psicológica en la recuperación de adicciones: un estudio de mediación secuencial"
+
 abstract: >-
-  Estudio de mediación secuencial en una comunidad terapéutica residencial. Examina si la indefensión se
-  asocia al malestar cognitivo a través de la evitación conductual y del déficit de reforzadores ambientales,
-  y si el capital comunitario y la flexibilidad psicológica modifican esas relaciones. La base analítica
-  comprende 425 observaciones persona-semana correspondientes a 39 participantes. Investigación en proceso.
+  Estudio de mediación secuencial realizado en una comunidad terapéutica residencial.
+  El análisis examina la relación entre indefensión, evitación, reforzamiento ambiental
+  y malestar cognitivo, e incorpora indicadores de capital comunitario y flexibilidad
+  psicológica. La muestra analítica comprende 24 pacientes y 124 observaciones
+  longitudinales. Investigación en proceso.
+
 type: software
+
 authors:
-  - family-names: "COMPLETAR_APELLIDO"
+  - family-names: "Gutiérrez Castro"
     given-names: "Lauro"
-    affiliation: "COMPLETAR_INSTITUCION"
-    orcid: "https://orcid.org/COMPLETAR"
-# COMPLETAR: apellidos, coautores, afiliación y ORCID.
-# Los nombres y su orden deben coincidir exactamente con los del cartel y con los de la ponencia.
-repository-code: "https://github.com/zarakaeldiosdelcaos-byte/modulacion-comunitaria-flexibilidad"
-url: "https://github.com/zarakaeldiosdelcaos-byte/modulacion-comunitaria-flexibilidad"
-version: 0.1.0
-date-released: "2026-10-10"
+    affiliation: "Comunidad Terapéutica Under The Tree Miller A.C."
+    orcid: "https://orcid.org/0009-0005-5207-9448"
+
+  - family-names: "Ramírez Burgos"
+    given-names: "Wendy Areli"
+    affiliation: "Universidad Nacional Autónoma de México"
+    orcid: "https://orcid.org/0000-0001-9261-4859"
+
+repository-code: "https://github.com/zarakaeldiosdelcaos-byte/modulacion-comunitaria-flexibilidad-psicologica"
+
+url: "https://github.com/zarakaeldiosdelcaos-byte/modulacion-comunitaria-flexibilidad-psicologica"
+
+version: "0.1.0"
+
 license: CC-BY-NC-4.0
+
 keywords:
-  - flexibilidad psicológica
-  - capital comunitario
-  - recuperación de adicciones
-  - mediación secuencial
-  - comunidad terapéutica
-  - evitación conductual
-  - reforzadores ambientales
-  - investigación en proceso
+  - "flexibilidad psicológica"
+  - "capital comunitario"
+  - "recuperación de adicciones"
+  - "mediación secuencial"
+  - "comunidad terapéutica"
+  - "evitación conductual"
+  - "reforzamiento ambiental"
+  - "investigación en proceso"
+
 preferred-citation:
   type: generic
   title: "Modulación comunitaria y flexibilidad psicológica en la recuperación de adicciones: un estudio de mediación secuencial"
+  authors:
+    - family-names: "Gutiérrez Castro"
+      given-names: "Lauro"
+      orcid: "https://orcid.org/0009-0005-5207-9448"
+    - family-names: "Ramírez Burgos"
+      given-names: "Wendy Areli"
+      orcid: "https://orcid.org/0000-0001-9261-4859"
   year: 2026
-  notes: "Investigación en proceso. Versión 0.1.0."
+  version: "0.1.0"
+  repository-code: "https://github.com/zarakaeldiosdelcaos-byte/modulacion-comunitaria-flexibilidad-psicologica"
+  notes: "Investigación en proceso. Esquema y documentación de trabajo."
