@@ -8,6 +8,14 @@
 
 > Este archivo es el **plano científico y gráfico del cartel**. No constituye el cartel final.
 
+<p align="center">
+  <img
+    src="...assets/esquema-cartel-cientifico-horizontal.jpg"
+    alt="Portada visual del esquema para el cartel científico"
+    width="100%"
+  >
+</p>
+
 ---
 
 # 1. Objetivo del documento
