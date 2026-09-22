@@ -1,11 +1,18 @@
 # RECONSTRUCCIÓN COMPLETA DEL PROYECTO
 
-**Documento central.** Reconstruye el proyecto «Modulación comunitaria y flexibilidad psicológica en la
-recuperación de adicciones: un estudio de mediación secuencial».
-Cada apartado indica si lo afirmado procede de **archivos** (N1–N4) o es **reconstrucción** (N5).
-**Revisión 2 (2026-09-21):** se incorpora el hallazgo de las salidas primarias del MFCA. La conclusión de la
-primera pasada («los coeficientes no existen») queda rectificada; el motivo del error está en
-`../01_AUDITORIA_FUENTES/EVIDENCIA_BUSQUEDA.md` §0.
+<p align="center">
+  <img src="assets/portada-reconstruccion.jpg"
+       alt="Reconstrucción completa del proyecto: Modulación comunitaria y flexibilidad psicológica en la recuperación de adicciones"
+       width="100%">
+</p>
+
+**Documento central.** Reconstruye el proyecto «Modulación comunitaria y flexibilidad psicológica en la recuperación de adicciones: un estudio de mediación secuencial».
+
+Cada apartado distingue entre información procedente de **fuentes documentales recuperadas** (N1–N4) y elementos de **reconstrucción analítica o documental** (N5).
+
+**Revisión 2 — 21 de septiembre de 2026.** Esta revisión incorpora la localización y verificación de resultados primarios previamente no identificados. La interpretación de la primera revisión, según la cual determinados coeficientes no habían sido localizados, queda rectificada a partir de la nueva evidencia documental.
+
+Este documento presenta una **reconstrucción documental y analítica del proyecto**. No constituye una publicación de datos individuales ni reproduce materiales clínicos, identificadores o información potencialmente identificable.
 
 ---
 
