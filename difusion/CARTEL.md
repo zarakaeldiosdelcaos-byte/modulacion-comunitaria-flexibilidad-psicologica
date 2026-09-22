@@ -122,6 +122,27 @@ La selección final dependerá de las dimensiones y de la legibilidad del cartel
 └────────────────────────┴───────────────────────────────────┘
 ```
 
+## 4.1 Diseño visual exploratorio
+
+Como parte de la fase inicial de producción se generó un **diseño visual exploratorio con Gemini**
+para visualizar una posible distribución del cartel.
+
+Este material tiene únicamente función de referencia durante la etapa de diseño. **No corresponde al
+cartel final y será descartado antes de la versión definitiva.**
+
+La imagen se conserva en `assets/` exclusivamente como registro del proceso de exploración visual.
+
+<p align="center">
+  <img
+    src="assets/Diseño%20de%20prueba%20con%20Gemini.jpg"
+    alt="Diseño visual exploratorio del cartel generado como prueba"
+    width="85%"
+  >
+</p>
+
+> **Estado:** diseño exploratorio / descartable.  
+> **Uso:** referencia visual para evaluar composición, jerarquía y distribución de elementos.
+
 ---
 
 # 5. Proporción sugerida de contenidos
