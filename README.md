@@ -71,9 +71,9 @@ El modelo parte de una perspectiva contextual y funcional de la recuperación.
 
 *Figura 1. Modelo conceptual del proyecto. La figura representa relaciones hipotetizadas y no constituye un modelo causal definitivo.*
 
-**contexto comunitario + flexibilidad psicológica**
+El modelo parte de una perspectiva contextual y funcional de la recuperación.
 
-pueden modificar la relación entre procesos de evitación y disponibilidad de reforzadores, mientras que la reducción de patrones de evitación y el incremento de repertorios psicológicamente flexibles podrían favorecer condiciones más compatibles con la recuperación.
+**Contexto comunitario + flexibilidad psicológica** pueden modificar la relación entre los procesos de evitación y la disponibilidad de reforzadores. A su vez, la reducción de patrones de evitación y el incremento de repertorios psicológicamente flexibles podrían favorecer condiciones más compatibles con la recuperación.
 
 El proyecto no pretende reducir la recuperación a un único mecanismo psicológico. El interés se centra en estudiar cómo **procesos individuales y condiciones comunitarias interactúan dentro de un contexto residencial de tratamiento**.
 
@@ -81,48 +81,63 @@ El proyecto no pretende reducir la recuperación a un único mecanismo psicológ
 
 **Estado:** estudio en proceso.
 
-El repositorio se encuentra en construcción y tiene como finalidad proporcionar una organización transparente de:
+El repositorio se encuentra en construcción y está organizado como un espacio de documentación científica reproducible y progresiva. Su propósito es reunir los materiales que permiten comprender **cómo se plantea, documenta y comunica el estudio**, manteniendo separadas las fuentes clínicas individuales de los materiales destinados a consulta pública.
 
-* materiales metodológicos;
-* resultados agregados;
-* figuras;
-* código para generación de visualizaciones;
-* referencias bibliográficas;
-* documentación de procedencia;
-* limitaciones y decisiones analíticas;
-* materiales de difusión científica.
+### Contenido del repositorio
 
-Los materiales clínicos individuales y cualquier información potencialmente identificable permanecen fuera del repositorio público.
+El repositorio incorpora, de manera progresiva:
+
+* **Metodología y documentación:** descripción del diseño, decisiones analíticas, procedencia y limitaciones.
+* **Resultados agregados:** resultados estadísticos que pueden compartirse sin exponer información individual.
+* **Figuras y visualizaciones:** materiales gráficos y código utilizado para su generación.
+* **Referencias y difusión científica:** bibliografía, materiales de presentación y documentación asociada a la comunicación del proyecto.
+
+### Protección de la información
+
+Los materiales clínicos individuales y cualquier información potencialmente identificable **permanecen fuera del repositorio público**. Esto incluye bases de datos a nivel participante, narrativas clínicas, transcripciones, archivos derivados que permitan reconstruir información individual y cualquier documento que contenga identificadores o rutas internas de trabajo.
+
+La publicación se limita a materiales preparados específicamente para su difusión científica y compatibles con los principios de **protección de datos, trazabilidad y transparencia metodológica**.
 
 ## Protección de datos
 
-Este repositorio **no contiene ni contendrá datos individuales de participantes**.
+Este repositorio **no contiene ni contendrá datos individuales de participantes**. La publicación se limita a materiales preparados específicamente para difusión científica pública y a resultados agregados que no permitan identificar información individual.
 
-No se publicarán:
-
-* bases de datos clínicas;
-* filas individuales de participantes;
-* identificadores o números de expediente;
-* narraciones clínicas;
-* transcripciones;
-* corpus de texto;
-* embeddings derivados de narraciones;
-* checkpoints que contengan datos;
-* credenciales, tokens o claves de acceso;
-* manifiestos que expongan rutas o nombres de archivos clínicos internos.
+| Material no publicado                                         | Motivo de exclusión                                                                                       |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Bases de datos clínicas y filas individuales                  | Contienen información a nivel participante y no son necesarias para la documentación pública del estudio. |
+| Identificadores, números de expediente y fechas individuales  | Pueden contribuir a la identificación directa o indirecta de participantes.                               |
+| Narraciones clínicas y transcripciones                        | Pueden contener información sensible o elementos identificables presentes en el texto original.           |
+| Corpus de texto y embeddings derivados                        | Pueden conservar o permitir inferir información derivada de material clínico no público.                  |
+| Checkpoints que contienen datos                               | Pueden incorporar datos individuales o representaciones derivadas de estos.                               |
+| Credenciales, tokens y claves de acceso                       | Son información de seguridad y nunca forman parte de una publicación científica.                          |
+| Manifiestos con rutas o nombres de archivos clínicos internos | Pueden revelar información sobre la organización y localización de materiales clínicos no públicos.       |
 
 Los resultados que se incorporen al repositorio serán exclusivamente **agregados y apropiados para difusión científica pública**.
 
+
 ## Estructura
 
-```text
-docs/          Documentación metodológica y científica
-figuras/       Figuras originales y reconstruidas para difusión
-codigo/        Código asociado a las figuras del proyecto
-tablas/        Resultados agregados seleccionados
-difusion/      Cartel, ponencia y referencias
-assets/        Recursos gráficos del repositorio
-```
+El repositorio organiza los materiales públicos del proyecto en tres funciones principales: documentar, analizar y comunicar. Esta separación permite distinguir entre la documentación científica, los materiales asociados al análisis y los recursos destinados a la difusión.
+
+                         PROYECTO
+                            │
+          ┌─────────────────┼─────────────────┐
+          │                 │                 │
+          ▼                 ▼                 ▼
+     DOCUMENTAR          ANALIZAR         COMUNICAR
+          │                 │                 │
+        docs/        tablas/ · figuras/   difusion/
+                          │
+                       codigo/
+                          │
+                       assets/
+                   soporte visual
+
+Documentar reúne la metodología, procedencia, limitaciones y decisiones analíticas.
+Analizar concentra los resultados agregados, las figuras y el código asociado a su generación.
+Comunicar contiene los materiales preparados para la difusión científica del proyecto.
+
+Los materiales clínicos individuales y cualquier información potencialmente identificable permanecen fuera del repositorio público.
 
 ## Difusión científica
 
@@ -152,5 +167,6 @@ La documentación de metodología, procedencia y limitaciones se mantendrá sepa
 **Población:** adultos en tratamiento residencial por trastornos relacionados con el consumo de sustancias
 
 **Contexto:** comunidad terapéutica residencial, México
-
+**Institución participante:** Comunidad Terapéutica Under The Tree
 **Estado:** estudio en proceso
+
