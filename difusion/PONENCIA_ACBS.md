@@ -2,7 +2,7 @@
 
 <p align="center">
   <img
-    src="../assets/portada_esquema_ponencia_acbs.jpg"
+    src="../assets/portada-acbs-mexico.jpg"
     alt="Portada del esquema de la ponencia — ACBS Capítulo México"
     width="100%"
   >
