@@ -1,5 +1,13 @@
 # Esquema de la ponencia — ACBS Capítulo México
 
+<p align="center">
+  <img
+    src="../assets/portada_esquema_ponencia_acbs.jpg"
+    alt="Portada del esquema de la ponencia — ACBS Capítulo México"
+    width="100%"
+  >
+</p>
+
 > **Estado del documento: EN PRODUCCIÓN**
 >
 > Este archivo constituye un **esquema de trabajo** para la preparación de la ponencia.
