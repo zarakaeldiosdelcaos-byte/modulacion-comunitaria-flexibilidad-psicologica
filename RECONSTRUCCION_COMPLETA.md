@@ -1,35 +1,45 @@
 # RECONSTRUCCIÓN COMPLETA DEL PROYECTO
 
-**Documento central.** Reconstruye el proyecto «Modulación comunitaria y flexibilidad psicológica en la
-recuperación de adicciones: un estudio de mediación secuencial».
-Cada apartado indica si lo afirmado procede de **archivos** (N1–N4) o es **reconstrucción** (N5).
-**Revisión 2 (2026-09-21):** se incorpora el hallazgo de las salidas primarias del MFCA. La conclusión de la
-primera pasada («los coeficientes no existen») queda rectificada; el motivo del error está en
-`../01_AUDITORIA_FUENTES/EVIDENCIA_BUSQUEDA.md` §0.
+<p align="center">
+  <img src="assets/origen-idea-v1.jpg"
+       alt="Origen y convergencia del proyecto: líneas de investigación previas y formulación actual"
+       width="100%">
+</p>
+
+**Documento central.** Reconstruye el proyecto «Modulación comunitaria y flexibilidad psicológica en la recuperación de adicciones: un estudio de mediación secuencial».
+
+Cada apartado distingue entre información procedente de **fuentes documentales recuperadas** (N1–N4) y elementos de **reconstrucción analítica o documental** (N5).
+
+**Revisión 2 — 21 de septiembre de 2026.** Esta revisión incorpora la localización y verificación de resultados primarios previamente no identificados. La interpretación de la primera revisión, según la cual determinados coeficientes no habían sido localizados, queda rectificada a partir de la nueva evidencia documental.
+
+Este documento presenta una **reconstrucción documental y analítica del proyecto**. No constituye una publicación de datos individuales ni reproduce materiales clínicos, identificadores o información potencialmente identificable.
 
 ---
 
 ## 1. Origen de la idea
 
-El proyecto **no nació como estudio independiente**: nació del cruce de tres líneas preexistentes, cada una
-documentada por separado, más un bloque analítico de comunidad.
+El proyecto **no surgió inicialmente como un estudio independiente**. Su formulación actual emerge de la convergencia de tres líneas de trabajo desarrolladas previamente y de un bloque posterior de análisis centrado en los procesos comunitarios.
 
-* **Línea A — Rumiación.** Estudio piloto controlado de desmantelamiento de rumiación en comunidad terapéutica
-  masculina. Antecedente `rumia\Desmantelamiento de Rumia.pdf` (2022); instrumentos descargados en junio de
-  2025; manuales de sesión (`Rumia sesion 1/2/3.tex`, dic. 2025–mar. 2026). `[N1/N3]`
-* **Línea B — Corpus narrativo semanal.** Narraciones de residentes recolectadas durante 2025–2026,
-  procesadas por el pipeline NLP `MFCA-N1` del Cap. 11 (`Tolerancia al malestar_Adicciones\Casi unico P.G.G\`).
-  Es la fuente de las variables de proceso (indefensión, flexibilidad, capital comunitario). `[N1]`
-* **Línea C — Dimensión comunitaria y DICO.** Diccionarios y features `dico_*` definidos en
-  `SISAP-TUS-Research\sisap_tus\nlp\dico.py` y auditados en `migration\03d_procedencia_features_leakage.md`;
-  marco formal en `DICO_Model\`. `[N1/N3]`
-* **Punto de convergencia:** el bloque «ANÁLISIS DE MEDIACIÓN EN DOS PASOS: INDEFENSIÓN → EVITACIÓN → EROS →
-  ATQ-8» de `MFCA_Autoencodere.R` (línea 7893) y los bloques de moderación con proxies (líneas ~8250–8390).
-  Ahí, y sólo ahí, las tres líneas se integran. `[N1]`
+### Tres líneas que convergen
 
-**Cuándo:** las salidas del bloque están fechadas **2026-08-17 22:21**; el script se modificó el
-**2026-08-18 01:16**; el resumen es del **2026-08-12 12:17**. Hay una corrida del pipeline registrada a las
-**12:10:45 del 12 de agosto**. `NO DETERMINADO` el orden exacto (ver D-04).
+**Línea A — Rumiación.**
+Un estudio piloto de desmantelamiento de rumiación en una comunidad terapéutica proporcionó el antecedente relacionado con rumiación, malestar y progreso valoral.
+
+**Línea B — Procesos narrativos.**
+El análisis longitudinal de narraciones producidas durante el tratamiento permitió explorar variables de proceso relacionadas con **indefensión, flexibilidad psicológica y contexto comunitario**.
+
+**Línea C — Dimensión comunitaria.**
+Una línea de trabajo centrada en la caracterización funcional del contexto comunitario aportó los elementos conceptuales y analíticos utilizados posteriormente para representar el **capital comunitario** y otros procesos contextuales.
+
+### Punto de convergencia
+
+Estas tres líneas confluyeron posteriormente en un modelo que relaciona **indefensión, evitación, disponibilidad de reforzadores y malestar**, incorporando además el posible papel modulador del **capital comunitario** y la **flexibilidad psicológica**.
+
+La convergencia de estas líneas constituye el origen del proyecto en su formulación actual. Por ello, la reconstrucción debe entenderse como la recuperación de una trayectoria de investigación que fue integrando progresivamente distintos niveles de análisis, y no como la documentación de un estudio concebido desde el inicio como una única unidad metodológica.
+
+### Cronología documental
+
+Los materiales recuperados sitúan la generación de los principales resultados analíticos en **agosto de 2026**, mientras que la formulación documental del proyecto fue desarrollándose posteriormente. La secuencia exacta entre algunos materiales históricos y sus respectivas salidas analíticas permanece **no determinada**.
 
 ## 2. Pregunta inicial
 
