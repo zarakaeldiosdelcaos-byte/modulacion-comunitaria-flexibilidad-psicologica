@@ -1,20 +1,20 @@
 # Limitaciones
 
-## 1. La base analítica principal no está disponible como archivo exportado
+## 1. La base analítica principal no está disponible como archivo exportado independiente
 
-La base utilizada para el análisis principal corresponde a **425 observaciones de 39 residentes**, pero no se dispone actualmente de una exportación independiente de esa base que permita ejecutar nuevamente el modelo completo desde cero.
+La muestra analítica del proyecto comprende **24 pacientes y 124 observaciones longitudinales**. Actualmente no se dispone de una exportación independiente de la base completa que permita volver a ejecutar íntegramente el análisis desde cero en las mismas condiciones originales.
 
-La reconstrucción depende parcialmente de salidas históricas y de checkpoints del entorno original. Por ello, los tres coeficientes principales están **verificados en las salidas primarias**, pero no fueron reejecutados de manera independiente sobre la base original.
+Por ello, algunos resultados del análisis principal se sustentan en las salidas estadísticas históricas recuperadas y no en una nueva ejecución independiente sobre una copia de la base original.
 
 ---
 
-## 2. Existe una discrepancia documental en el tamaño de muestra
+## 2. El tamaño muestral es reducido para la complejidad del modelo
 
-El resumen histórico reporta **N = 24**, mientras que las salidas primarias del modelo principal corresponden a **425 observaciones de 39 residentes**.
+El análisis principal se realizó con **24 pacientes**, con observaciones repetidas que suman **124 registros**.
 
-El `N = 24` sí corresponde a un estudio piloto independiente de rumiación y fue reproducido exactamente.
+Aunque las observaciones longitudinales aumentan el número de registros disponibles para el análisis, no equivalen a 124 participantes independientes. Por tanto, la información efectiva para la inferencia entre individuos continúa estando limitada por el número de pacientes.
 
-Por tanto, no es posible atribuir sin reserva el tamaño muestral de 24 al análisis principal.
+Esto restringe la precisión con la que pueden estimarse modelos con múltiples rutas de mediación, covariables y términos de interacción.
 
 ---
 
@@ -24,10 +24,10 @@ El resumen histórico describe la construcción de los proxies de capital comuni
 
 El código recuperado muestra que:
 
-* el proxy de **capital comunitario** sí utiliza PCA y suavizado exponencial con `α = 0.3`;
-* el proxy de **flexibilidad psicológica** no utiliza PCA, sino una combinación de componentes con pesos fijos y posteriormente suavizado exponencial con `α = 0.3`.
+* el proxy de **capital comunitario** utiliza PCA y suavizado exponencial con `α = 0.3`;
+* el proxy de **flexibilidad psicológica** no utiliza PCA, sino una combinación de componentes con pesos fijos, seguida de suavizado exponencial con `α = 0.3`.
 
-Además, la varianza explicada utilizada para la selección/combinación de componentes del PCA no quedó conservada como salida persistente, y la justificación documental de los pesos del índice de flexibilidad no fue localizada.
+Además, la varianza explicada utilizada para la selección o combinación de componentes del PCA no quedó conservada como salida persistente, y no se localizó una justificación documental de los pesos utilizados en el índice de flexibilidad.
 
 ---
 
@@ -41,10 +41,12 @@ Por ello, los resultados de las corridas de reconstrucción no deben interpretar
 
 ---
 
-## 5. Las observaciones longitudinales y el diseño limitan la inferencia
+## 5. El diseño longitudinal y observacional limita la inferencia causal y la generalización
 
-El estudio utiliza observaciones repetidas por residente dentro de una comunidad terapéutica residencial.
+Las 124 observaciones corresponden a mediciones repetidas de **24 pacientes** dentro de una comunidad terapéutica residencial.
 
-El modelo histórico de ecuaciones estructurales incorporó `ID` como agrupamiento; sin embargo, la corrida externa de mediación realizada durante la reconstrucción utilizó observaciones por fila mediante modelos OLS y bootstrap, lo que puede producir una estimación de incertidumbre distinta cuando existen observaciones repetidas dentro de participante.
+Aunque el modelo histórico incorporó el agrupamiento por `ID`, la estructura longitudinal implica dependencia entre observaciones del mismo paciente y limita la interpretación de los registros como unidades independientes.
 
-Además, el diseño observacional y la realización del estudio en un contexto comunitario residencial específico no permiten interpretar los coeficientes de mediación como demostración experimental de causalidad ni asumir automáticamente su generalización a otras poblaciones o contextos terapéuticos.
+Además, el diseño observacional no permite interpretar los coeficientes de mediación como demostración experimental de causalidad.
+
+Finalmente, los resultados proceden de una comunidad terapéutica residencial específica y, por tanto, su generalización a otras poblaciones, instituciones o modalidades de tratamiento requiere evidencia adicional.
