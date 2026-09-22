@@ -1,69 +1,65 @@
 # Procedencia de los datos y resultados
 
+> **Investigación en proceso.** Este documento registra de qué archivo proviene cada variable, cifra y
+> resultado del análisis, de modo que cualquier persona pueda seguir el rastro de lo que se publica.
+
 ## 1. Propósito
 
 Este documento responde a:
 
 > **¿De qué archivo salió exactamente cada variable, cifra y resultado del análisis?**
 
-La procedencia se restringe a la muestra analítica utilizada en este proyecto:
+La procedencia corresponde a la base analítica utilizada en este proyecto:
 
-* **124 observaciones**
-* **24 pacientes/residentes**
+* **425 observaciones persona-semana**
+* **39 participantes**
 * identificador de participante: `ID`
 
-El estudio piloto histórico de rumiación y cualquier otra extracción que no corresponda a esta muestra se mantienen separados y no se utilizan para definir el tamaño muestral del proyecto.
+La línea del estudio piloto de rumiación y las bases complementarias se documentan por separado en
+`02_RESULTADOS.md` y no se utilizan para definir el tamaño muestral del proyecto.
 
 ---
 
-## 2. Fuente de la muestra analítica
+## 2. Fuente de la base analítica
 
-### 2.1 Muestra principal
+### 2.1 Base del análisis
 
-| Elemento                   | Procedencia              | Archivo / fuente                  | Variable / evidencia | Estado                      |
-| -------------------------- | ------------------------ | --------------------------------- | -------------------- | --------------------------- |
-| Número de observaciones    | Base analítica utilizada | archivo de datos del proyecto     | `124` registros      | **RECUPERADA DIRECTAMENTE** |
-| Número de pacientes        | Base analítica utilizada | archivo de datos del proyecto     | `24` `ID` únicos     | **RECUPERADA DIRECTAMENTE** |
-| Identificador del paciente | Base analítica           | `ID`                              | `ID`                 | **RECUPERADA DIRECTAMENTE** |
-| Unidad de análisis         | Estructura longitudinal  | registros por paciente y medición | paciente-observación | **RECUPERADA DIRECTAMENTE** |
+| Elemento                   | Procedencia                     | Archivo / fuente                  | Variable / evidencia | Estado         |
+| -------------------------- | ------------------------------- | --------------------------------- | -------------------- | -------------- |
+| Número de observaciones    | Base del análisis               | registros persona-semana          | `425`                | **Documentado** |
+| Número de participantes    | Base del análisis               | identificadores únicos            | `39` `ID`            | **Documentado** |
+| Identificador del participante | Base del análisis            | `ID`                              | `ID`                 | **Documentado** |
+| Unidad de análisis         | Estructura longitudinal         | registros por participante y medición | persona-semana   | **Documentado** |
 
-**Muestra oficial del proyecto:**
+**Base del análisis:**
 
 ```text
-124 observaciones
-24 pacientes/residentes
+425 observaciones persona-semana
+39 participantes
 ```
 
-**Nivel de evidencia:** N1
+**Nivel de evidencia:** N1 (salidas estadísticas del análisis)
 **Confianza:** Alta
 
+El número de observaciones proviene de las salidas que lo reportan de forma explícita: los modelos mixtos
+(`Number of obs: 425, groups: ID, 39`), los modelos aditivos generalizados (`n = 400` a `n = 425` según
+especificación) y el análisis de mediación con el paquete `mediation` (`Sample Size Used: 425`). El modelo de
+ecuaciones estructurales no imprime el número de observaciones retenidas.
+
 ---
 
-## 3. Corrección de una discrepancia documental previa
+## 3. Sobre otras cifras presentes en los materiales
 
-En materiales previamente auditados aparece una salida estadística que informa:
+En los materiales del proyecto aparecen otras dos cifras de tamaño muestral que **no describen la base
+analítica de este estudio** y por tanto no se utilizan aquí:
 
-```text
-Number of obs: 425
-groups: ID, 39
-```
+| Cifra | De dónde viene | Uso en este repositorio |
+|---|---|---|
+| `N = 24` (14 tratamiento / 10 comparación) | Estudio piloto de rumiación, línea independiente | Se documenta en `02_RESULTADOS.md` §6 como otra línea del programa de trabajo |
+| `127 observaciones / 33 participantes` | Base complementaria del registro quincenal | Se documenta en `02_RESULTADOS.md` §8 como base de un reanálisis complementario |
 
-Esa cifra **no debe utilizarse para describir la muestra oficial de este proyecto**, dado que la muestra analítica adoptada para este repositorio es de:
-
-```text
-124 observaciones
-24 pacientes
-```
-
-Por tanto, cualquier archivo, output o resultado que corresponda a la extracción de `425 / 39` debe clasificarse como:
-
-```text
-versión / extracción distinta
-```
-
-hasta establecer documentalmente su relación con la base de 124 observaciones y 24 pacientes.
-
-No se sustituye una cifra por otra dentro de un mismo análisis: se conserva la distinción entre versiones para mantener la trazabilidad.
+Las tres categorías —base del análisis, piloto de rumiación y bases complementarias— se mantienen separadas
+en toda la documentación.
 
 ---
 
@@ -71,37 +67,37 @@ No se sustituye una cifra por otra dentro de un mismo análisis: se conserva la 
 
 ### 4.1 BADS — evitación
 
-| Elemento                 | Procedencia                  |
-| ------------------------ | ---------------------------- |
-| Variable                 | `BADS_evitacion`             |
-| Fuente                   | base analítica del proyecto  |
-| Tipo                     | variable derivada observada  |
+| Elemento                 | Procedencia              |
+| ------------------------ | ------------------------ |
+| Variable                 | `BADS_evitacion`         |
+| Fuente                   | base del análisis        |
+| Tipo                     | variable derivada        |
 | Construcción documentada | `P8:P10 + P13:P15 + P24:P25` |
-| Estado                   | **RECUPERADA DIRECTAMENTE**  |
+| Estado                   | **Documentado**          |
 
 ---
 
 ### 4.2 EROS
 
-| Elemento     | Procedencia                 |
-| ------------ | --------------------------- |
-| Variable     | `EROS_total`                |
-| Fuente       | base analítica del proyecto |
-| Construcción | `SUM(P1:P10)`               |
-| Tipo         | variable observada          |
-| Estado       | **RECUPERADA DIRECTAMENTE** |
+| Elemento     | Procedencia       |
+| ------------ | ----------------- |
+| Variable     | `EROS_total`      |
+| Fuente       | base del análisis |
+| Construcción | `SUM(P1:P10)`     |
+| Tipo         | variable observada |
+| Estado       | **Documentado**   |
 
 ---
 
 ### 4.3 ATQ-8
 
-| Elemento     | Procedencia                 |
-| ------------ | --------------------------- |
-| Variable     | `ATQ8_total`                |
-| Fuente       | base analítica del proyecto |
-| Construcción | `SUM(P1:P8)`                |
-| Tipo         | variable observada          |
-| Estado       | **RECUPERADA DIRECTAMENTE** |
+| Elemento     | Procedencia       |
+| ------------ | ----------------- |
+| Variable     | `ATQ8_total`      |
+| Fuente       | base del análisis |
+| Construcción | `SUM(P1:P8)`      |
+| Tipo         | variable observada |
+| Estado       | **Documentado**   |
 
 ---
 
@@ -122,12 +118,12 @@ Indefension_sim
 dico_Desesperanza
 ```
 
-La variable está presente en la estructura analítica del proyecto, pero la fórmula completa de construcción de `indefension_idx_z` no quedó localizada de forma reproducible en la auditoría.
+La variable está presente en la estructura analítica del proyecto. La fórmula completa de construcción de `indefension_idx_z` no quedó localizada de forma reproducible en los materiales disponibles.
 
 Por tanto:
 
 ```text
-Variable: recuperada
+Variable: localizada
 Fórmula exacta: no localizada
 ```
 
@@ -138,7 +134,7 @@ Fórmula exacta: no localizada
 
 ## 6. Capital comunitario
 
-El proxy de capital comunitario se construyó mediante el bloque correspondiente de `MFCA_Autoencodere.R`.
+El índice de capital comunitario se construyó mediante el bloque correspondiente de `MFCA_Autoencodere.R`.
 
 ### Componentes
 
@@ -184,7 +180,7 @@ Parámetro de suavizado:
 α = 0.3
 ```
 
-**Estado:** RECUPERADA DIRECTAMENTE
+**Estado:** Documentado
 **Nivel:** N1
 **Confianza:** Alta
 
@@ -231,9 +227,9 @@ con:
 α = 0.3
 ```
 
-Este proxy **no utiliza PCA** en la implementación recuperada.
+Este índice **no utiliza PCA** en la implementación recuperada.
 
-**Estado:** RECUPERADA DIRECTAMENTE
+**Estado:** Documentado
 **Nivel:** N1
 **Confianza:** Alta
 
@@ -247,7 +243,7 @@ Este proxy **no utiliza PCA** en la implementación recuperada.
 | `dico_capital_compuesto` | variables DICO / código del proyecto    | covariable          |
 | `dico_balance`           | variables DICO / código del proyecto    | covariable          |
 
-La definición exacta de cada versión debe conservarse asociada al script y al output donde fue utilizada.
+La definición exacta de cada versión se conserva asociada al script y a la salida donde fue utilizada.
 
 ---
 
@@ -287,7 +283,7 @@ dico_balance
 
 como covariables.
 
-**Estado:** RECUPERADA DIRECTAMENTE
+**Estado:** Documentado
 **Nivel:** N1
 **Confianza:** Alta
 
@@ -295,91 +291,89 @@ como covariables.
 
 ## 10. Resultados y procedencia
 
-Los resultados numéricos solo se atribuirán a la muestra oficial de **124 observaciones / 24 pacientes** cuando el archivo de salida pueda vincularse inequívocamente con esa misma base.
+Cada cifra que se publica en `02_RESULTADOS.md` se acompaña del archivo de salida del que proviene. La
+correspondencia es la siguiente:
 
-Por tanto, se utilizará la siguiente regla:
+| Resultado | Salida primaria |
+|---|---|
+| `indirect1 = 2.735`, IC [1.633, 3.837] | `mediacion_dos_pasos_bootstrap.txt` |
+| `evit_cap = 0.195`, IC [0.024, 0.366] | `moderacion_capital_proxy_C.txt` |
+| `flex_c = −3.559`, IC [−6.604, −0.515] | `moderacion_flexibilidad_proxy_F.txt` |
+| `total = 2.303`, IC [1.366, 3.241] | `mediacion_dos_pasos_bootstrap.txt` |
+| `indirect1 = 0.351`, `total = 0.297` (estandarizado) | `mediacion_2pasos.txt` |
+| `indirect = 2.476`, IC [1.690, 3.262] | `mediacion_EROS_indefension.txt` |
+| `n = 425` · `groups: ID, 39` | modelo mixto del desenlace ATQ-8 |
 
-```text
-BASE = 124 observaciones / 24 pacientes
-        +
-OUTPUT correspondiente
-        =
-resultado atribuible al proyecto
-```
-
-Cuando un output indique otra muestra, esa cifra se conservará como evidencia histórica o como versión distinta, pero **no se utilizará para afirmar que el resultado proviene de los 24 pacientes**.
+Los archivos de salida se conservan y están disponibles para su cotejo.
 
 ---
 
 ## 11. Regla de trazabilidad
 
-Cada cifra publicada en `02_RESULTADOS.md` debe poder rastrearse mediante:
+Cada cifra publicada en `02_RESULTADOS.md` puede rastrearse mediante:
 
 ```text
 resultado
     ↓
-archivo de output
+archivo de salida
     ↓
-script
+script del análisis
     ↓
-base analítica
+base del análisis
     ↓
-124 observaciones / 24 pacientes
+425 observaciones persona-semana / 39 participantes
 ```
 
-Si uno de estos vínculos no puede establecerse, el resultado debe marcarse como:
-
-```text
-PROCEDENCIA NO CONFIRMADA
-```
-
-y no como resultado confirmado de la muestra principal.
+Cuando un resultado proviene de una base distinta —el piloto de rumiación o una base complementaria— se
+identifica explícitamente como tal en `02_RESULTADOS.md`.
 
 ---
 
 ## 12. Estado actual de procedencia
 
-### Confirmado
+### Documentado
 
 ```text
-Muestra oficial:
-124 observaciones
-24 pacientes
+Base del análisis:
+425 observaciones persona-semana
+39 participantes
 
 BADS_evitacion
 EROS_total
 ATQ8_total
 
 Capital comunitario:
-PCA + robust_plogis + suavizado α=.3
+PCA + robust_plogis + suavizado α = .3
 
 Flexibilidad:
 0.45 / 0.35 / −0.20
 + robust_plogis
-+ suavizado α=.3
++ suavizado α = .3
 
 Modelo:
 mediación secuencial
 ```
 
-### Pendiente de conciliación
+### Registrado, fuera de la base del análisis
 
 ```text
-Outputs que reportan:
-425 observaciones
-39 pacientes
-```
+Estudio piloto de rumiación:
+N = 24 (14 tratamiento / 10 comparación)
 
-Estos outputs no deben mezclarse con la muestra oficial de 24 pacientes hasta establecer su procedencia exacta.
+Base complementaria del registro quincenal:
+127 observaciones / 33 participantes
+
+Reanálisis externo:
+251 observaciones / 21 participantes
+```
 
 ---
 
 ## 13. Regla final
 
-La muestra oficial del repositorio es:
+La base analítica del repositorio es:
 
-> **24 pacientes y 124 observaciones.**
+> **425 observaciones persona-semana correspondientes a 39 participantes.**
 
-Toda cifra incluida en `02_RESULTADOS.md` deberá estar vinculada a esa muestra o identificarse explícitamente como procedente de otra versión, estudio o extracción.
-
-No se utilizará el valor `425 / 39` como muestra del proyecto.
+Toda cifra incluida en `02_RESULTADOS.md` está vinculada a esa base o se identifica explícitamente como
+procedente de otra línea o base complementaria.
