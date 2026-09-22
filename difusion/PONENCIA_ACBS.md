@@ -25,13 +25,13 @@ La función de este documento es definir un **plano inicial de trabajo** que per
 
 La estructura propuesta podrá revisarse a medida que avance la producción de las diapositivas y se confirme la información requerida por el evento.
 
-### Muestra oficial del proyecto
+### Base analítica del proyecto
 
 Para todos los productos derivados de este análisis se utilizará como referencia:
 
 ```text
-24 pacientes
-124 observaciones longitudinales
+425 observaciones persona-semana
+39 participantes
 ```
 
 Esta cifra debe mantenerse consistente entre:
