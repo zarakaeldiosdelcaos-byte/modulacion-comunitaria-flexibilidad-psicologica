@@ -10,7 +10,7 @@
 
 <p align="center">
   <img
-    src="...assets/esquema-cartel-cientifico-horizontal.jpg"
+    src="assets/esquema-cartel-cientifico-horizontal.jpg"
     alt="Portada visual del esquema para el cartel científico"
     width="100%"
   >
