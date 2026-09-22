@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "Investigación en proceso. Si utiliza este material, cite la versión etiquetada y su fecha."
+title: "Modulación comunitaria y flexibilidad psicológica en la recuperación de adicciones: un estudio de mediación secuencial"
+abstract: >-
+  Estudio de mediación secuencial en una comunidad terapéutica residencial. Examina si la indefensión se
+  asocia al malestar cognitivo a través de la evitación conductual y del déficit de reforzadores ambientales,
+  y si el capital comunitario y la flexibilidad psicológica modifican esas relaciones. La base analítica
+  comprende 425 observaciones persona-semana correspondientes a 39 participantes. Investigación en proceso.
+type: software
+authors:
+  - family-names: "COMPLETAR_APELLIDO"
+    given-names: "Lauro"
+    affiliation: "COMPLETAR_INSTITUCION"
+    orcid: "https://orcid.org/COMPLETAR"
+# COMPLETAR: apellidos, coautores, afiliación y ORCID.
+# Los nombres y su orden deben coincidir exactamente con los del cartel y con los de la ponencia.
+repository-code: "https://github.com/zarakaeldiosdelcaos-byte/modulacion-comunitaria-flexibilidad"
+url: "https://github.com/zarakaeldiosdelcaos-byte/modulacion-comunitaria-flexibilidad"
+version: 0.1.0
+date-released: "2026-10-10"
+license: CC-BY-NC-4.0
+keywords:
+  - flexibilidad psicológica
+  - capital comunitario
+  - recuperación de adicciones
+  - mediación secuencial
+  - comunidad terapéutica
+  - evitación conductual
+  - reforzadores ambientales
+  - investigación en proceso
+preferred-citation:
+  type: generic
+  title: "Modulación comunitaria y flexibilidad psicológica en la recuperación de adicciones: un estudio de mediación secuencial"
+  year: 2026
+  notes: "Investigación en proceso. Versión 0.1.0."
