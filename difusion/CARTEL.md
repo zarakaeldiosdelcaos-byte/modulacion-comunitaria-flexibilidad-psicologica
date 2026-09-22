@@ -112,7 +112,7 @@ La selección final dependerá de las dimensiones y de la legibilidad del cartel
 
 ```text
 ┌────────────────────────────────────────────────────────────┐
-│ TÍTULO · AUTORES · FILIACIÓN · IDENTIFICACIÓN DEL EVENTO │
+│ TÍTULO · AUTORES · FILIACIÓN · IDENTIFICACIÓN DEL EVENTO   │
 ├────────────────────────┬───────────────────────────────────┤
 │ INTRODUCCIÓN           │ RESULTADOS                        │
 │                        │                                   │
@@ -121,10 +121,10 @@ La selección final dependerá de las dimensiones y de la legibilidad del cartel
 │ MÉTODO                 │ Figura 3                          │
 │                        │ Figura 4                          │
 │                        │                                   │
-│                        │ DISCUSIÓN                          │
-│                        │ CONCLUSIONES                       │
-│                        │ LIMITACIONES                       │
-│                        │ REFERENCIAS / QR                   │
+│                        │ DISCUSIÓN                         │
+│                        │ CONCLUSIONES                      │
+│                        │ LIMITACIONES                      │
+│                        │ REFERENCIAS / QR                  │
 └────────────────────────┴───────────────────────────────────┘
 ```
 
