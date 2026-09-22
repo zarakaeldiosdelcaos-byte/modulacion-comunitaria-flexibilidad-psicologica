@@ -152,9 +152,9 @@ El proyecto forma parte de la producción científica presentada en espacios aca
 Entre los materiales previstos se encuentran:
 
 * **XI Reunión Nacional de Investigación en Psicología**
-* **Presentación ACBS — 10 de octubre**
+* **Presentación ACBS Chapter México — 10 de octubre**
 
-Los materiales de difusión se incorporarán conforme sean revisados y estén disponibles para publicación.
+Los materiales de difusión se incorporarán conforme sean revisados y estén disponibles para publicación. La información pública de las actividades puede consultarse en las páginas institucionales correspondientes: [ACBS Chapter México Sur](https://www.facebook.com/ChapterMexicoSurACBS) y [Sociedad Mexicana de Investigación y Psicología](https://www.facebook.com/smipoficial).
 
 ## Palabras clave
 
