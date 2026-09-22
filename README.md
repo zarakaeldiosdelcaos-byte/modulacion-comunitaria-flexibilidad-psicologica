@@ -17,7 +17,7 @@ La recuperación de los trastornos por consumo de sustancias ocurre en interacci
 Este proyecto examina un modelo de **mediación secuencial** en población residencial.
 
 <p align="center">
-  <img src="figuras/reconstruidas/modulacion-secuencial.jpg"
+  <img src="figuras/modulacion-secuencial.jpg"
        alt="Modelo conceptual de mediación secuencial: indefensión, evitación, déficit de reforzadores y malestar"
        width="850">
 </p>
