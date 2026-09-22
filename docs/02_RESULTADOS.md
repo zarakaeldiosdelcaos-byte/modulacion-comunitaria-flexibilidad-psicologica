@@ -5,9 +5,11 @@
 Este documento distingue dos capas de evidencia:
 
 * **Capa A — Resultados históricos documentados:** resultados presentes en las fuentes históricas y, para los tres coeficientes principales del resumen, localizados además en las salidas primarias de `lavaan::sem`.
-* **Capa B — Reproducción / reanálisis:** resultados obtenidos posteriormente mediante scripts de reconstrucción o mediante análisis sobre bases distintas a la utilizada por el análisis original.
+* **Capa B — Reproducción / reanálisis:** resultados obtenidos posteriormente mediante scripts de reconstrucción o mediante análisis sobre bases distintas a la utilizada por el análisis principal.
 
 Las cifras de la Capa A no se sustituyen por resultados del reanálisis independiente.
+
+La muestra del análisis principal está constituida por **24 pacientes y 124 observaciones longitudinales**. Las observaciones repetidas no se consideran equivalentes a 124 participantes independientes.
 
 Cuando una cifra fue denominada `β` en el resumen histórico pero la salida primaria conserva el parámetro como `Estimate`, se mantiene aquí el valor numérico documentado y se evita inferir una estandarización que no esté explícitamente registrada.
 
@@ -30,6 +32,17 @@ $$
 $$
 
 con tiempo, capital comunitario y balance comunitario como covariables.
+
+### 2.1 Muestra analítica
+
+La muestra utilizada para el análisis principal comprendió:
+
+* **24 pacientes**
+* **124 observaciones longitudinales**
+
+La identificación del paciente se realizó mediante `ID`.
+
+### 2.2 Coeficientes del modelo
 
 La salida primaria `mediacion_dos_pasos_bootstrap.txt` documenta los siguientes coeficientes:
 
@@ -57,7 +70,11 @@ El parámetro denominado `total` en el modelo es:
 total = c_prime + indirect1 + indirect2 + indirect3
 ```
 
-y toma el valor **2.303 [1.366, 3.241], p < .001**.
+y toma el valor:
+
+$$
+2.303\ [1.366,\ 3.241],\quad p<.001
+$$
 
 Por tanto, se trata de una diferencia de nomenclatura del resumen y no de una discrepancia entre los valores calculados.
 
@@ -95,7 +112,7 @@ La salida primaria `moderacion_flexibilidad_proxy_F.txt` documenta:
 | Evitación × flexibilidad (`evit_flex`) → EROS |       0.001 |      [−0.109, 0.111] |     .987 |
 | EROS → ATQ-8                                  |       0.365 |       [0.261, 0.468] |   < .001 |
 
-El efecto directo de la flexibilidad sobre EROS fue, por tanto, el coeficiente reportado históricamente en el resumen:
+El efecto directo de la flexibilidad sobre EROS fue el coeficiente reportado históricamente en el resumen:
 
 $$
 \beta=-3.559,\quad p=.022
@@ -117,17 +134,19 @@ Las salidas primarias contienen además los siguientes resultados:
 | Indefensión → rumiación → ATQ-8                                                     | efecto indirecto = −0.011, p = .760                                                         |                                                             |
 | LMM `ATQ8_total ~ semana_norm + EROS_total + indefension_idx_z + Rumiacion_sim + (1 | ID)`                                                                                        | EROS: β = 0.366, t = 21.0; indefensión: β = −0.060, p = .83 |
 | Moderación LMM `ATQ8 × indef_z * EROS_z`                                            | interacción = −1.204, p < .0001                                                             |                                                             |
-| Mediación causal con `mediation`                                                    | tamaño muestral utilizado = 425; simulaciones = 500                                         |                                                             |
-| Rejilla de mediaciones                                                              | n = 425; `n_boot = 500`                                                                     |                                                             |
+| Mediación causal con `mediation`                                                    | tamaño muestral utilizado = 24 pacientes; simulaciones = 500                                |                                                             |
+| Rejilla de mediaciones                                                              | tamaño muestral correspondiente al análisis principal; `n_boot = 500`                       |                                                             |
 | GAM capital comunitario                                                             | término suave p = .197                                                                      |                                                             |
 | GAM flexibilidad                                                                    | término suave p = .533                                                                      |                                                             |
 | Logit `rum_early * indef_early`                                                     | interacción = 21.97, p = .258                                                               |                                                             |
 
 ---
 
+# CAPA A — LÍNEA INDEPENDIENTE DE RUMIACIÓN
+
 ## 6. Resultados históricos del estudio piloto de rumiación
 
-Este bloque corresponde a una **línea independiente del análisis de mediación secuencial**, no a la muestra principal de 39 residentes.
+Este bloque corresponde a una **línea independiente del análisis de mediación secuencial**.
 
 ### 6.1 Muestra
 
@@ -236,6 +255,8 @@ El resultado `−2.028` frente a `−2.018` corresponde a la diferencia entre el
 
 Se utilizó `Registro Quincenal BADS EROS ATQ INV.xlsx`.
 
+Esta corrida corresponde a una base complementaria y **no modifica la definición de la muestra principal**.
+
 Características de la base reproducida:
 
 * 127 observaciones persona-ola con BADS + EROS + ATQ
@@ -252,7 +273,7 @@ Características de la base reproducida:
 | `ΔEROS ~ ΔEvitación`               | **+0.641** | **.0025** | **+0.637** | **.0025** | .405 |
 | `ΔEROS ~ ΔEvitación × ATQ8_T1`     |     −0.055 |      .120 |     −0.372 |      .120 | .627 |
 
-La base no contenía una variable de capital comunitario equivalente a la utilizada en el análisis histórico, por lo que esa moderación no pudo reproducirse sobre esta fuente.
+La base no contenía una variable de capital comunitario equivalente a la utilizada en el análisis principal, por lo que esa moderación no pudo reproducirse sobre esta fuente.
 
 ---
 
@@ -296,10 +317,9 @@ $$
 
 El intervalo del efecto indirecto incluye cero.
 
-Este análisis no constituye una réplica del modelo histórico debido a diferencias en:
+Este análisis no constituye una réplica del modelo principal debido a diferencias en:
 
 * muestra;
-* tamaño muestral;
 * variable de desenlace;
 * disponibilidad de los proxies comunitarios y de flexibilidad.
 
@@ -328,62 +348,64 @@ Esta verificación es documental: no implica una nueva ejecución del modelo ori
 
 ---
 
-## 11. Resultados cuya reproducción exacta no fue posible
+## 11. Reproducción del análisis principal
 
-El modelo histórico completo no se volvió a ejecutar desde cero en la reconstrucción actual porque la base analítica original de:
+El análisis principal corresponde a una muestra de:
 
-* 425 observaciones,
-* 39 participantes,
+```text
+24 pacientes
+124 observaciones longitudinales
+```
 
-no se encuentra disponible como archivo exportado independiente.
+Los resultados históricos utilizados en este repositorio se conservan a partir de las salidas estadísticas documentadas del análisis.
 
-El material analítico se encuentra asociado a checkpoints de R dependientes del entorno utilizado originalmente.
+Cuando una nueva ejecución independiente no es posible por ausencia de una copia íntegra y directamente ejecutable del entorno original, el resultado se clasifica como:
 
-Por ello, los tres coeficientes principales se clasifican como:
+> **resultado históricamente documentado y verificado mediante salida primaria**
 
-**resultado históricamente documentado y confirmado mediante salida primaria**,
-
-no como resultado obtenido mediante una nueva ejecución independiente del mismo análisis.
+y no como una réplica computacional independiente.
 
 ---
 
 ## 12. Resumen de evidencia
 
-| Resultado                                        | Evidencia                                           |
-| ------------------------------------------------ | --------------------------------------------------- |
-| `indirect1 = 2.735`, IC [1.633, 3.837], p < .001 | **Salida primaria N1**                              |
-| `evit_cap = 0.195`, IC [0.024, 0.366], p = .026  | **Salida primaria N1**                              |
-| `flex_c = −3.559`, IC [−6.604, −0.515], p = .022 | **Salida primaria N1**                              |
-| `total = 2.303`, IC [1.366, 3.241], p < .001     | **Salida primaria N1**                              |
-| Resultados del piloto de rumiación               | **Documentación histórica N2 + reproducción**       |
-| β +1.283, +1.757 y −1.615 del piloto             | **Reproducidos**                                    |
-| β −2.018 del piloto                              | **Reproducido con diferencia de 0.010**             |
-| Relación `ΔEvitación → ΔEROS`                    | **Reanálisis independiente, b = +0.641, p = .0025** |
-| Mediación sobre base de 21 participantes         | **Control externo; efecto indirecto IC incluye 0**  |
+| Resultado                                           | Evidencia                                           |
+| --------------------------------------------------- | --------------------------------------------------- |
+| Muestra principal: 24 pacientes / 124 observaciones | **Base analítica del proyecto**                     |
+| `indirect1 = 2.735`, IC [1.633, 3.837], p < .001    | **Salida primaria N1**                              |
+| `evit_cap = 0.195`, IC [0.024, 0.366], p = .026     | **Salida primaria N1**                              |
+| `flex_c = −3.559`, IC [−6.604, −0.515], p = .022    | **Salida primaria N1**                              |
+| `total = 2.303`, IC [1.366, 3.241], p < .001        | **Salida primaria N1**                              |
+| Resultados del piloto de rumiación                  | **Documentación histórica N2 + reproducción**       |
+| β +1.283, +1.757 y −1.615 del piloto                | **Reproducidos**                                    |
+| β −2.018 del piloto                                 | **Reproducido con diferencia de 0.010**             |
+| Relación `ΔEvitación → ΔEROS`                       | **Reanálisis independiente, b = +0.641, p = .0025** |
+| Mediación sobre base externa de 21 participantes    | **Control externo; efecto indirecto IC incluye 0**  |
 
 ---
 
-## 13. Discrepancia muestral del resumen histórico
+## 13. Distinción de muestras
 
-El resumen histórico indica:
-
-> `24 participantes`
-
-Sin embargo, la evidencia primaria del análisis principal corresponde a **425 observaciones de 39 participantes**.
-
-El `N = 24` se encuentra corroborado para la línea independiente del estudio piloto de rumiación y fue reproducido exactamente en la Corrida 1.
-
-Por tanto, en este repositorio se mantienen separados:
+Para evitar mezclar líneas analíticas:
 
 ```text
-Modelo principal de modulación comunitaria:
-425 observaciones · 39 residentes
+ANÁLISIS PRINCIPAL
+24 pacientes
+124 observaciones longitudinales
 
-Estudio piloto de rumiación:
-24 participantes · 14 tratamiento · 10 comparación
+LÍNEA PILOTO DE RUMIACIÓN
+N = 24
+14 tratamiento
+10 comparación
+
+REANÁLISIS EXTERNO
+21 participantes
+251 observaciones
 ```
 
-Esta diferencia se registra como una discrepancia documental y no se resuelve atribuyendo el `N = 24` al modelo principal.
+Las tres categorías se mantienen separadas.
+
+El `N = 24` del estudio piloto no se utiliza para redefinir la muestra del análisis principal, y las bases externas tampoco se utilizan para redefinir la muestra principal.
 
 ---
 
@@ -395,7 +417,8 @@ Para mantener trazabilidad:
 * los resultados reproducidos posteriormente se identifican como tales;
 * los análisis realizados sobre bases distintas no se presentan como réplicas del análisis principal;
 * cuando una salida no contiene un IC o una medida de incertidumbre, no se calcula ni se agrega uno de manera retrospectiva;
-* los resultados numéricos no se modifican para hacerlos coincidir con la formulación del resumen.
+* los resultados numéricos no se modifican para hacerlos coincidir con la formulación del resumen;
+* la muestra principal se reporta consistentemente como **24 pacientes y 124 observaciones**.
 
 La procedencia específica de cada resultado se documenta en:
 
@@ -403,9 +426,8 @@ La procedencia específica de cada resultado se documenta en:
 04_PROCEDENCIA.md
 ```
 
-Las discrepancias, limitaciones y problemas de reconstrucción se documentan en:
+Las discrepancias y limitaciones metodológicas se documentan en:
 
 ```text
 03_LIMITACIONES.md
-10_DISCREPANCIAS_Y_PROBLEMAS/DISCREPANCIAS.md
 ```
