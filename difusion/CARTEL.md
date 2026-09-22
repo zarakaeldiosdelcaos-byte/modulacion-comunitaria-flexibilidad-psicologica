@@ -134,7 +134,7 @@ La imagen se conserva en `assets/` exclusivamente como registro del proceso de e
 
 <p align="center">
   <img
-    src="assets/diseno-prueba-gemini-product"
+    src="../assets/diseno-prueba-gemini-product.jpg"
     alt="Diseño visual exploratorio del cartel generado como prueba"
     width="85%"
   >
